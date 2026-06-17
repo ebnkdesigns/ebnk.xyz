@@ -1,30 +1,33 @@
-name: Generate Channel Pages
+name: Generate Channel Pages and Deploy
 
 on:
   schedule:
-    # Runs every day at midnight (UTC).
     - cron: '0 0 * * *'
-  workflow_dispatch: # Allows manual triggering from the Actions tab
+  workflow_dispatch:
+
+# Ensure only one deployment runs at a time
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   generate-pages:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Required to allow the action to push files back to the repo
-
+      contents: write # Required to push files back to the repo
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Fetch API and Generate HTML Files
         run: |
-          # Using 'EOF' with quotes ensures Bash doesn't try to evaluate JS variables
           cat << 'EOF' > generate_pages.py
           import urllib.request
           import json
           import os
 
-          # The HTML template provided (with updated regex for .html files)
+          # Using __CHANNEL_SLUG__ as a placeholder to be replaced by Python
           html_template = """<!DOCTYPE html>
           <html lang="en">
           <head>
@@ -41,18 +44,14 @@ jobs:
               
               <style>
                   :root {
-                      /* Plyr theme accent */
                       --plyr-color-main: #ee0826; 
                   }
-
                   body {
-                      /* Polymer-style gray to black gradient */
                       background: linear-gradient(135deg, #424242 0%, #000000 100%);
                       background-attachment: fixed;
                       min-height: 100dvh;
                       color: #ffffff;
                   }
-                  
                   .player-container {
                       width: 100%;
                       margin: 0 auto;
@@ -61,7 +60,7 @@ jobs:
           </head>
           <body>
               <div class="topbar">
-                  <a href="/" id="home-nav">
+                  <a href="https://ebnk.xyz/chnl/" id="home-nav">
                       <button class="menubutton">
                           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
                       </button>
@@ -86,28 +85,8 @@ jobs:
               <script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.16/dist/hls.min.js"></script>
               <script type="text/javascript">
                   (async function generatePage() {
-                      // 1. Automatically extract slug from URL (Query param or Path)
-                      function extractSlug() {
-                          // Check query params (e.g., ?slug=toon_d)
-                          const params = new URLSearchParams(window.location.search);
-                          if (params.has('slug')) return params.get('slug');
-                          
-                          // Check path formats
-                          const path = window.location.pathname;
-                          
-                          // Match /@slug or /@slug.html anywhere in the path
-                          const atMatch = path.match(/\/@([^/.]+)(?:\.html)?\/?$/i);
-                          if (atMatch) return atMatch[1];
-                          
-                          // Match /watch/slug or /watch/slug.html anywhere in the path
-                          const watchMatch = path.match(/\/watch\/([^/.]+)(?:\.html)?\/?$/i);
-                          if (watchMatch) return watchMatch[1];
-                          
-                          // Fallback default
-                          return "KAL";
-                      }
-                      
-                      const slug = extractSlug();
+                      // Hardcoded by the Python generator
+                      const slug = "__CHANNEL_SLUG__";
                       window.currentSlug = slug;
 
                       const viewerCountEl = document.getElementById("viewer-count");
@@ -116,7 +95,6 @@ jobs:
                       const aboutDescEl = document.getElementById("about-description");
                       const video = document.getElementById("player");
 
-                      // 2. Fetch Channel Info (The m3u8 API logic)
                       let channel = null;
                       try {
                           const res = await fetch(`https://api.nive.live/api/channel/${slug}`);
@@ -133,13 +111,11 @@ jobs:
                           return;
                       }
 
-                      // Populate UI with fetched data
                       document.title = `nive // @${channel.name}`;
                       titleEl.textContent = `@${channel.name}`;
                       aboutTitleEl.textContent = `About @${channel.name}`;
                       aboutDescEl.innerHTML = `<p>${channel.description || 'No description provided.'}</p>`;
 
-                      // 3. Initialize Player 
                       let hlsInstance = null;
                       let plyrInstance = null;
 
@@ -153,7 +129,6 @@ jobs:
                       }
 
                       if (channel.is_live === true) {
-                          // Live: Use mci01.nive.live m3u8 endpoint
                           const source = `https://mci01.nive.live/${channel.id}/index.m3u8`;
 
                           if (Hls.isSupported()) {
@@ -173,23 +148,21 @@ jobs:
                               
                               hlsInstance.on(Hls.Events.MANIFEST_PARSED, async () => {
                                   initPlyr();
-                                  try { await video.play(); } catch(e) { console.log("Autoplay blocked"); }
+                                  try { await video.play(); } catch(e) {}
                               });
                           } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
                               video.src = source;
                               initPlyr();
                               video.addEventListener('loadedmetadata', async () => {
-                                  try { await video.play(); } catch(e) { console.log("Autoplay blocked"); }
+                                  try { await video.play(); } catch(e) {}
                               });
                           }
                       } else {
-                          // Offline fallback logic
-                          video.src = "/assets/video/rest.mp4"; // Ensure this offline video exists
+                          video.src = "/assets/video/rest.mp4";
                           video.loop = true;
                           initPlyr();
                       }
 
-                      // 4. Viewer Count & Heartbeat APIs (Using dynamic slug)
                       function updateViewerCount() {
                           fetch(`https://webchnl.com/api/viewers.php?slug=${encodeURIComponent(window.currentSlug)}`)
                               .then(response => response.json())
@@ -234,18 +207,15 @@ jobs:
                           }).catch(e => console.error("Heartbeat error", e));
                       }
 
-                      // Fire API polling immediately, then interval
                       updateViewerCount();
                       sendHeartbeat();
                       setInterval(updateViewerCount, 10000);
                       setInterval(sendHeartbeat, 10000);
-
                   })();
               </script>
           </body>
           </html>"""
 
-          # Fetch the API
           url = "https://api.nive.live/api/channels"
           try:
               req = urllib.request.Request(url, headers={"User-Agent": "GitHubActionsBot/1.0"})
@@ -255,7 +225,6 @@ jobs:
               print(f"Failed to fetch channels: {e}")
               exit(1)
 
-          # Handle whether the API returns a list directly or a wrapper object
           channels = []
           if isinstance(data, list):
               channels = [item.get("name") for item in data if isinstance(item, dict) and "name" in item]
@@ -269,7 +238,6 @@ jobs:
               print("No channels found. Verify API response structure.")
               exit(0)
 
-          # Base directory
           base_dir = "chnl/watch"
           os.makedirs(base_dir, exist_ok=True)
 
@@ -277,36 +245,47 @@ jobs:
               if not name: 
                   continue
                   
-              # Creating an HTML file directly instead of a folder 
-              # e.g., chnl/watch/toon_d.html
               file_path = os.path.join(base_dir, f"{name}.html")
               
-              # Skip creation if file already exists
-              if os.path.exists(file_path):
-                  print(f"Skipping: {name}.html (already exists)")
-                  continue
-              
+              # Inject the channel name into the template and overwrite the file
+              custom_html = html_template.replace("__CHANNEL_SLUG__", name)
               with open(file_path, "w", encoding="utf-8") as f:
-                  f.write(html_template)
-              print(f"Generated new page for channel: {name}.html")
-          
+                  f.write(custom_html)
+              print(f"Updated/Generated page for channel: {name}.html")
           EOF
           
-          # Run the generated Python script
           python3 generate_pages.py
 
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Stage any new or modified files in the watch directory
           git add chnl/watch/
-          
-          # Check if there are actual changes before trying to commit
           if git diff --staged --quiet; then
-            echo "No new channels to add. Working tree is clean."
+            echo "No changes to commit. Working tree is clean."
           else
-            git commit -m "Auto-generated new channel pages from Nive API"
+            git commit -m "Auto-update channel pages from Nive API"
             git push
           fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.' # Uploads your entire repository root
+
+  deploy:
+    needs: generate-pages
+    permissions:
+      pages: write      # Required to deploy to Pages
+      id-token: write   # Required to verify the deployment identity
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
