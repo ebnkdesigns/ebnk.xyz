@@ -117,7 +117,7 @@ function renderChannels(channels) {
 
       // Basic Click Navigation
       const navigate = (newTab = false) => {
-        const url = `watch/${channel.name}`; 
+        const url = `https://ebnk.xyz/chnl/watch/${channel.name}`; 
         if (newTab) window.open(url, '_blank');
         else window.location.href = url;
       };
