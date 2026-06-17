@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#ee0826">
     <meta name="apple-mobile-web-app-title" content="webchnl">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>nive // channel</title>
+    <title>polychnl // loading..</title>
     <meta name="theme-color" content="#ee0826" />
     
     <link rel="stylesheet" href="https://ebnk.xyz/chnl/watch.css">
@@ -34,7 +34,7 @@
 </head>
 <body>
     <div class="topbar">
-        <a href="/" id="home-nav">
+        <a href="https://ebnk.xyz/chnl/" id="home-nav">
             <button class="menubutton">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
             </button>
@@ -61,19 +61,19 @@
         (async function generatePage() {
             // 1. Automatically extract slug from URL (Query param or Path)
             function extractSlug() {
-                // Check query params (e.g., ?slug=eel_ch)
+                // Check query params (e.g., ?slug=toon_d)
                 const params = new URLSearchParams(window.location.search);
                 if (params.has('slug')) return params.get('slug');
                 
                 // Check path formats
                 const path = window.location.pathname;
                 
-                // Match /@slug
-                const atMatch = path.match(/^\/@([^/]+)$/i);
+                // Match /@slug anywhere in the path (e.g., /chnl/@toon_d)
+                const atMatch = path.match(/\/@([^/]+)\/?$/i);
                 if (atMatch) return atMatch[1];
                 
-                // Match /watch/slug
-                const watchMatch = path.match(/^\/watch\/([^/]+)$/i);
+                // Match /watch/slug anywhere in the path (e.g., /chnl/watch/toon_d)
+                const watchMatch = path.match(/\/watch\/([^/]+)\/?$/i);
                 if (watchMatch) return watchMatch[1];
                 
                 // Fallback default
@@ -199,13 +199,6 @@
                 return id;
             }
 
-            function sendHeartbeat() {
-                fetch('https://webchnl.com/api/heartbeat.php', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: `slug=${encodeURIComponent(window.currentSlug)}&client_id=${encodeURIComponent(getClientId())}`
-                }).catch(e => console.error("Heartbeat error", e));
-            }
 
             // Fire API polling immediately, then interval
             updateViewerCount();
