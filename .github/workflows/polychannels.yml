@@ -1,0 +1,312 @@
+name: Generate Channel Pages
+
+on:
+  schedule:
+    # Runs every day at midnight (UTC).
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows manual triggering from the Actions tab
+
+jobs:
+  generate-pages:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required to allow the action to push files back to the repo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch API and Generate HTML Files
+        run: |
+          # Using 'EOF' with quotes ensures Bash doesn't try to evaluate JS variables
+          cat << 'EOF' > generate_pages.py
+          import urllib.request
+          import json
+          import os
+
+          # The HTML template provided (with updated regex for .html files)
+          html_template = """<!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <meta name="apple-mobile-web-app-status-bar-style" content="#ee0826">
+              <meta name="apple-mobile-web-app-title" content="webchnl">
+              <meta name="apple-mobile-web-app-capable" content="yes">
+              <title>nive // channel</title>
+              <meta name="theme-color" content="#ee0826" />
+              
+              <link rel="stylesheet" href="https://ebnk.xyz/chnl/watch.css">
+              <link href="https://cdn.jsdelivr.net/npm/plyr@3.8.4/dist/plyr.min.css" rel="stylesheet">
+              
+              <style>
+                  :root {
+                      /* Plyr theme accent */
+                      --plyr-color-main: #ee0826; 
+                  }
+
+                  body {
+                      /* Polymer-style gray to black gradient */
+                      background: linear-gradient(135deg, #424242 0%, #000000 100%);
+                      background-attachment: fixed;
+                      min-height: 100dvh;
+                      color: #ffffff;
+                  }
+                  
+                  .player-container {
+                      width: 100%;
+                      margin: 0 auto;
+                  }
+              </style>
+          </head>
+          <body>
+              <div class="topbar">
+                  <a href="/" id="home-nav">
+                      <button class="menubutton">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                      </button>
+                  </a>
+                  <p id="channel-title-text">Loading...</p>
+              </div>
+              <div class="main">
+                  <div class="player-container">
+                      <video id="player" playsinline controls crossorigin="anonymous"></video>
+                  </div>
+                  
+                  <div class="info">
+                      <p id="viewer-count" style="color: gray; display: none;">● Offline</p>
+                      <h1 id="about-title">About</h1>
+                      <div id="about-description">
+                          <p>Loading channel info...</p>
+                      </div>
+                  </div>
+              </div>
+
+              <script src="https://cdn.jsdelivr.net/npm/plyr@3.8.4/dist/plyr.polyfilled.min.js"></script>
+              <script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.16/dist/hls.min.js"></script>
+              <script type="text/javascript">
+                  (async function generatePage() {
+                      // 1. Automatically extract slug from URL (Query param or Path)
+                      function extractSlug() {
+                          // Check query params (e.g., ?slug=toon_d)
+                          const params = new URLSearchParams(window.location.search);
+                          if (params.has('slug')) return params.get('slug');
+                          
+                          // Check path formats
+                          const path = window.location.pathname;
+                          
+                          // Match /@slug or /@slug.html anywhere in the path
+                          const atMatch = path.match(/\/@([^/.]+)(?:\.html)?\/?$/i);
+                          if (atMatch) return atMatch[1];
+                          
+                          // Match /watch/slug or /watch/slug.html anywhere in the path
+                          const watchMatch = path.match(/\/watch\/([^/.]+)(?:\.html)?\/?$/i);
+                          if (watchMatch) return watchMatch[1];
+                          
+                          // Fallback default
+                          return "KAL";
+                      }
+                      
+                      const slug = extractSlug();
+                      window.currentSlug = slug;
+
+                      const viewerCountEl = document.getElementById("viewer-count");
+                      const titleEl = document.getElementById("channel-title-text");
+                      const aboutTitleEl = document.getElementById("about-title");
+                      const aboutDescEl = document.getElementById("about-description");
+                      const video = document.getElementById("player");
+
+                      // 2. Fetch Channel Info (The m3u8 API logic)
+                      let channel = null;
+                      try {
+                          const res = await fetch(`https://api.nive.live/api/channel/${slug}`);
+                          channel = await res.json();
+                      } catch (e) {
+                          console.error("Failed to fetch channel data", e);
+                      }
+
+                      if (!channel || !channel.id) {
+                          document.title = "Channel not found";
+                          titleEl.textContent = "Error";
+                          aboutTitleEl.textContent = "Channel not found.";
+                          aboutDescEl.innerHTML = `<p>The channel <b>@${slug}</b> does not exist or couldn't be loaded.</p>`;
+                          return;
+                      }
+
+                      // Populate UI with fetched data
+                      document.title = `nive // @${channel.name}`;
+                      titleEl.textContent = `@${channel.name}`;
+                      aboutTitleEl.textContent = `About @${channel.name}`;
+                      aboutDescEl.innerHTML = `<p>${channel.description || 'No description provided.'}</p>`;
+
+                      // 3. Initialize Player 
+                      let hlsInstance = null;
+                      let plyrInstance = null;
+
+                      function initPlyr() {
+                          if (!plyrInstance) {
+                              plyrInstance = new Plyr(video, {
+                                  controls: ["play-large", "play", "mute", "volume", "settings", "pip", "airplay", "fullscreen"],
+                                  settings: ["quality"],
+                              });
+                          }
+                      }
+
+                      if (channel.is_live === true) {
+                          // Live: Use mci01.nive.live m3u8 endpoint
+                          const source = `https://mci01.nive.live/${channel.id}/index.m3u8`;
+
+                          if (Hls.isSupported()) {
+                              hlsInstance = new Hls({
+                                  liveSyncDurationCount: 4,
+                                  liveMaxLatencyDurationCount: 8,
+                                  maxLiveSyncPlaybackRate: 1,
+                                  maxBufferLength: 20,
+                                  backBufferLength: 5,
+                                  xhrSetup: (xhr) => { xhr.withCredentials = true; }
+                              });
+                              
+                              hlsInstance.attachMedia(video);
+                              hlsInstance.on(Hls.Events.MEDIA_ATTACHED, () => {
+                                  hlsInstance.loadSource(source);
+                              });
+                              
+                              hlsInstance.on(Hls.Events.MANIFEST_PARSED, async () => {
+                                  initPlyr();
+                                  try { await video.play(); } catch(e) { console.log("Autoplay blocked"); }
+                              });
+                          } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                              video.src = source;
+                              initPlyr();
+                              video.addEventListener('loadedmetadata', async () => {
+                                  try { await video.play(); } catch(e) { console.log("Autoplay blocked"); }
+                              });
+                          }
+                      } else {
+                          // Offline fallback logic
+                          video.src = "/assets/video/rest.mp4"; // Ensure this offline video exists
+                          video.loop = true;
+                          initPlyr();
+                      }
+
+                      // 4. Viewer Count & Heartbeat APIs (Using dynamic slug)
+                      function updateViewerCount() {
+                          fetch(`https://webchnl.com/api/viewers.php?slug=${encodeURIComponent(window.currentSlug)}`)
+                              .then(response => response.json())
+                              .then(data => {
+                                  viewerCountEl.style.display = "block";
+                                  if (data.viewers === -1 || !channel.is_live) {
+                                      viewerCountEl.textContent = "● Offline";
+                                      viewerCountEl.style.color = "gray";
+                                  } else if (data.viewers !== undefined && data.viewers !== null) {
+                                      viewerCountEl.textContent = `● ${data.viewers}`;
+                                      viewerCountEl.style.color = "rgb(255, 91, 91)";
+                                  }
+                              })
+                              .catch(() => {
+                                  viewerCountEl.style.display = "block";
+                                  viewerCountEl.textContent = "● Offline";
+                                  viewerCountEl.style.color = "gray";
+                              });
+                      }
+
+                      function getClientId() {
+                          let id = localStorage.getItem('webchnl_client_id');
+                          if (!id) {
+                              if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+                                  id = crypto.randomUUID();
+                              } else {
+                                  id = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                                      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                                      return v.toString(16);
+                                  });
+                              }
+                              localStorage.setItem('webchnl_client_id', id);
+                          }
+                          return id;
+                      }
+
+                      function sendHeartbeat() {
+                          fetch('https://webchnl.com/api/heartbeat.php', {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                              body: `slug=${encodeURIComponent(window.currentSlug)}&client_id=${encodeURIComponent(getClientId())}`
+                          }).catch(e => console.error("Heartbeat error", e));
+                      }
+
+                      // Fire API polling immediately, then interval
+                      updateViewerCount();
+                      sendHeartbeat();
+                      setInterval(updateViewerCount, 10000);
+                      setInterval(sendHeartbeat, 10000);
+
+                  })();
+              </script>
+          </body>
+          </html>"""
+
+          # Fetch the API
+          url = "https://api.nive.live/api/channels"
+          try:
+              req = urllib.request.Request(url, headers={"User-Agent": "GitHubActionsBot/1.0"})
+              with urllib.request.urlopen(req) as response:
+                  data = json.loads(response.read().decode())
+          except Exception as e:
+              print(f"Failed to fetch channels: {e}")
+              exit(1)
+
+          # Handle whether the API returns a list directly or a wrapper object
+          channels = []
+          if isinstance(data, list):
+              channels = [item.get("name") for item in data if isinstance(item, dict) and "name" in item]
+          elif isinstance(data, dict):
+              for key, val in data.items():
+                  if isinstance(val, list):
+                      channels = [item.get("name") for item in val if isinstance(item, dict) and "name" in item]
+                      break
+
+          if not channels:
+              print("No channels found. Verify API response structure.")
+              exit(0)
+
+          # Base directory
+          base_dir = "chnl/watch"
+          os.makedirs(base_dir, exist_ok=True)
+
+          for name in channels:
+              if not name: 
+                  continue
+                  
+              # Creating an HTML file directly instead of a folder 
+              # e.g., chnl/watch/toon_d.html
+              file_path = os.path.join(base_dir, f"{name}.html")
+              
+              # Skip creation if file already exists
+              if os.path.exists(file_path):
+                  print(f"Skipping: {name}.html (already exists)")
+                  continue
+              
+              with open(file_path, "w", encoding="utf-8") as f:
+                  f.write(html_template)
+              print(f"Generated new page for channel: {name}.html")
+          
+          EOF
+          
+          # Run the generated Python script
+          python3 generate_pages.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Stage any new or modified files in the watch directory
+          git add chnl/watch/
+          
+          # Check if there are actual changes before trying to commit
+          if git diff --staged --quiet; then
+            echo "No new channels to add. Working tree is clean."
+          else
+            git commit -m "Auto-generated new channel pages from Nive API"
+            git push
+          fi
