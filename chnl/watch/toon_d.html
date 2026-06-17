@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#ee0826">
     <meta name="apple-mobile-web-app-title" content="webchnl">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>polychnl // loading..</title>
+    <title>nive // channel</title>
     <meta name="theme-color" content="#ee0826" />
     
     <link rel="stylesheet" href="https://ebnk.xyz/chnl/watch.css">
@@ -14,18 +14,14 @@
     
     <style>
         :root {
-            /* Plyr theme accent */
             --plyr-color-main: #ee0826; 
         }
-
         body {
-            /* Polymer-style gray to black gradient */
             background: linear-gradient(135deg, #424242 0%, #000000 100%);
             background-attachment: fixed;
             min-height: 100dvh;
             color: #ffffff;
         }
-        
         .player-container {
             width: 100%;
             margin: 0 auto;
@@ -59,28 +55,8 @@
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.16/dist/hls.min.js"></script>
     <script type="text/javascript">
         (async function generatePage() {
-            // 1. Automatically extract slug from URL (Query param or Path)
-            function extractSlug() {
-                // Check query params (e.g., ?slug=toon_d)
-                const params = new URLSearchParams(window.location.search);
-                if (params.has('slug')) return params.get('slug');
-                
-                // Check path formats
-                const path = window.location.pathname;
-                
-                // Match /@slug anywhere in the path (e.g., /chnl/@toon_d)
-                const atMatch = path.match(/\/@([^/]+)\/?$/i);
-                if (atMatch) return atMatch[1];
-                
-                // Match /watch/slug anywhere in the path (e.g., /chnl/watch/toon_d)
-                const watchMatch = path.match(/\/watch\/([^/]+)\/?$/i);
-                if (watchMatch) return watchMatch[1];
-                
-                // Fallback default
-                return "KAL";
-            }
-            
-            const slug = extractSlug();
+            // Hardcoded by the Python generator
+            const slug = "toon_d";
             window.currentSlug = slug;
 
             const viewerCountEl = document.getElementById("viewer-count");
@@ -89,7 +65,6 @@
             const aboutDescEl = document.getElementById("about-description");
             const video = document.getElementById("player");
 
-            // 2. Fetch Channel Info (The m3u8 API logic)
             let channel = null;
             try {
                 const res = await fetch(`https://api.nive.live/api/channel/${slug}`);
@@ -106,13 +81,11 @@
                 return;
             }
 
-            // Populate UI with fetched data
             document.title = `nive // @${channel.name}`;
             titleEl.textContent = `@${channel.name}`;
             aboutTitleEl.textContent = `About @${channel.name}`;
             aboutDescEl.innerHTML = `<p>${channel.description || 'No description provided.'}</p>`;
 
-            // 3. Initialize Player 
             let hlsInstance = null;
             let plyrInstance = null;
 
@@ -126,7 +99,6 @@
             }
 
             if (channel.is_live === true) {
-                // Live: Use mci01.nive.live m3u8 endpoint
                 const source = `https://mci01.nive.live/${channel.id}/index.m3u8`;
 
                 if (Hls.isSupported()) {
@@ -146,23 +118,21 @@
                     
                     hlsInstance.on(Hls.Events.MANIFEST_PARSED, async () => {
                         initPlyr();
-                        try { await video.play(); } catch(e) { console.log("Autoplay blocked"); }
+                        try { await video.play(); } catch(e) {}
                     });
                 } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
                     video.src = source;
                     initPlyr();
                     video.addEventListener('loadedmetadata', async () => {
-                        try { await video.play(); } catch(e) { console.log("Autoplay blocked"); }
+                        try { await video.play(); } catch(e) {}
                     });
                 }
             } else {
-                // Offline fallback logic
-                video.src = "/assets/video/rest.mp4"; // Ensure this offline video exists
+                video.src = "/assets/video/rest.mp4";
                 video.loop = true;
                 initPlyr();
             }
 
-            // 4. Viewer Count & Heartbeat APIs (Using dynamic slug)
             function updateViewerCount() {
                 fetch(`https://webchnl.com/api/viewers.php?slug=${encodeURIComponent(window.currentSlug)}`)
                     .then(response => response.json())
@@ -199,13 +169,18 @@
                 return id;
             }
 
+            function sendHeartbeat() {
+                fetch('https://webchnl.com/api/heartbeat.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: `slug=${encodeURIComponent(window.currentSlug)}&client_id=${encodeURIComponent(getClientId())}`
+                }).catch(e => console.error("Heartbeat error", e));
+            }
 
-            // Fire API polling immediately, then interval
             updateViewerCount();
             sendHeartbeat();
             setInterval(updateViewerCount, 10000);
             setInterval(sendHeartbeat, 10000);
-
         })();
     </script>
 </body>
