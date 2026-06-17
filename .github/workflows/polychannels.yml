@@ -60,7 +60,7 @@ jobs:
           </head>
           <body>
               <div class="topbar">
-                  <a href="https://ebnk.xyz/chnl/" id="home-nav">
+                  <a href="/" id="home-nav">
                       <button class="menubutton">
                           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
                       </button>
@@ -164,15 +164,30 @@ jobs:
                       }
 
                       function updateViewerCount() {
-                          fetch(`https://webchnl.com/api/viewers.php?slug=${encodeURIComponent(window.currentSlug)}`)
+                          fetch('https://api.nive.live/api/channels')
                               .then(response => response.json())
                               .then(data => {
+                                  let channelsArray = [];
+                                  if (Array.isArray(data)) {
+                                      channelsArray = data;
+                                  } else if (typeof data === 'object') {
+                                      for (const key in data) {
+                                          if (Array.isArray(data[key])) {
+                                              channelsArray = data[key];
+                                              break;
+                                          }
+                                      }
+                                  }
+
+                                  const currentChannelData = channelsArray.find(c => c.name === window.currentSlug);
                                   viewerCountEl.style.display = "block";
-                                  if (data.viewers === -1 || !channel.is_live) {
+
+                                  if (!currentChannelData || currentChannelData.is_live === false) {
                                       viewerCountEl.textContent = "● Offline";
                                       viewerCountEl.style.color = "gray";
-                                  } else if (data.viewers !== undefined && data.viewers !== null) {
-                                      viewerCountEl.textContent = `● ${data.viewers}`;
+                                  } else {
+                                      const viewers = currentChannelData.viewer_count || 0;
+                                      viewerCountEl.textContent = `● ${viewers}`;
                                       viewerCountEl.style.color = "rgb(255, 91, 91)";
                                   }
                               })
