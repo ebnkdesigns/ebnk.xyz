@@ -1,0 +1,148 @@
+@import url("/assets/font/gtstandard/load.css");
+
+:root {
+    --color-red-50: rgb(254, 230, 233);
+    --color-red-100: rgb(254, 205, 212);
+    --color-red-200: rgb(252, 151, 165);
+    --color-red-300: rgb(250, 101, 121);
+    --color-red-400: rgb(249, 48, 74);
+    --color-red-500: rgb(238, 8, 38);
+    --color-red-600: rgb(188, 7, 30);
+    --color-red-700: rgb(144, 4, 23);
+    --color-red-800: rgb(94, 4, 15);
+    --color-red-900: rgb(50, 1, 8);
+    --color-red-950: rgb(25, 1, 4);
+    --color-red-1000: rgb(11, 0, 2);
+}
+
+* {
+    font-family: "GT Standard", sans-serif;
+    font-style: normal;
+    box-sizing: border-box;
+    font-variation-settings: "slnt" 0;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    color: rgba(244, 244, 244, 1);
+}
+
+a:link {
+    color: var(--color-red);
+}
+
+a:visited {
+    color: var(--color-red-dark);
+}
+
+a:hover {
+    color: rgb(255, 105, 105);
+}
+
+a:link,
+a:visited,
+a:hover {
+    transition: var(--transition);
+}
+
+em {
+    font-style: italic;
+}
+
+.topbar {
+    display: grid;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    gap: 24px;
+    height: 48px;
+    padding-block: 8px;
+    padding-inline: 24px;
+    background: linear-gradient(to left, #C0C0C0, #ffffff);
+    box-shadow: none;
+    z-index: 1;
+}
+
+.topbar p {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    align-self: center;
+    color: black;
+}
+
+.menubutton {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    width: 32px;
+    height: 32px;
+    stroke: #000000;
+    transition: 0.2s;
+}
+
+.menubutton:hover {
+    stroke: #9a0c0c;
+    cursor: pointer;
+    transition: 0.2s
+}
+
+.main {
+    position: relative;
+    margin: auto;
+    gap: 12px;
+    padding: 24px;
+    padding-top: 70px;
+    max-width: 1000px;
+}
+
+.player {
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.vjs-big-play-button {
+    background-color: transparent !important;
+    border: 0 !important;
+    font-size: 50px !important;
+}
+
+.vjs-loading-spinner {
+    color: var(--color-red-500) !important;
+    border: 2px solid transparent !important;
+}
+
+.vjs-live-display,
+.vjs-control-text {
+    font-family: "GT Standard", sans-serif !important;
+}
+
+.vjs-control-bar {
+    background: linear-gradient(0deg, rgba(90, 90, 90) 0%, rgba(0, 0, 0) 100%) !important;
+}
+
+.info {
+    background: linear-gradient(to bottom, #C0C0C0, #ffffff);
+    padding: 24px;
+    max-width: 1000px;
+    min-width: 240px;
+}
+
+.info h1 {
+    font-size: 24px;
+    color: black;
+}
+
+.info p {
+    font-size: 16px;
+    color: black;
+}
+
+.info img {
+    width: 16px;
+}
