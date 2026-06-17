@@ -16,18 +16,19 @@
 }
 
 :root {
-    --color-red-50: rgb(254, 230, 233);
-    --color-red-100: rgb(254, 205, 212);
-    --color-red-200: rgb(252, 151, 165);
-    --color-red-300: rgb(250, 101, 121);
-    --color-red-400: rgb(249, 48, 74);
-    --color-red-500: rgb(238, 8, 38);
-    --color-red-600: rgb(188, 7, 30);
-    --color-red-700: rgb(144, 4, 23);
-    --color-red-800: rgb(94, 4, 15);
-    --color-red-900: rgb(50, 1, 8);
-    --color-red-950: rgb(25, 1, 4);
-    --color-red-1000: rgb(11, 0, 2);
+    /* red Theme Palette built around #FF16C5 */
+    --color-red-50: #FFEAF8;
+    --color-red-100: #FFD1F2;
+    --color-red-200: #FFA3E4;
+    --color-red-300: #FF66D4;
+    --color-red-400: #FF33C9;
+    --color-red-500: #FF16C5; /* Core Brand red */
+    --color-red-600: #CC0FA1;
+    --color-red-700: #990B79;
+    --color-red-800: #660751;
+    --color-red-900: #330428;
+    --color-red-950: #1A0214;
+    --color-red-1000: #0D010A;
 }
 
 :root {
@@ -49,7 +50,7 @@ body {
     width: 100vw;
     height: 100dvh;
     color: var(--color-mono-50);
-    background-image: linear-gradient(to bottom, #EE0826, #C30720);
+    background-image: linear-gradient(to bottom, #FF16C5, #CC0FA1);
     font-variation-settings: "slnt" 0;
     overflow: hidden;
 }
@@ -193,7 +194,6 @@ header img {
     width: 100%;
 }
 
-
 .section-title {
     grid-column: 1 / -1;
     font-size: 14px;
@@ -263,7 +263,7 @@ button:hover {
     transform: translateY(-4px);
     border-color: var(--color-red-500);
     background-color: var(--color-mono-900);
-    box-shadow: 0 8px 30px rgba(238, 8, 38, 0.1);
+    box-shadow: 0 8px 30px rgba(255, 22, 197, 0.1);
 }
 
 .item:focus-within {
@@ -327,7 +327,6 @@ button:hover {
     background-color: var(--color-red-500);
     box-shadow: 0 0 8px var(--color-red-500);
 }
-
 
 .item.offline .status-dot {
     background-color: gray;
@@ -396,7 +395,7 @@ button:hover {
 .search-bar:focus {
     border-color: var(--color-red-500);
     background-color: var(--color-mono-900);
-    box-shadow: 0 0 0 4px rgba(238, 8, 38, 0.1);
+    box-shadow: 0 0 0 4px rgba(255, 22, 197, 0.1);
 }
 
 .search-bar::placeholder {
@@ -406,7 +405,7 @@ button:hover {
 .card {
     display: flex;
     flex-direction: column;
-    background: rgba(30, 0, 4, 1);
+    background: rgba(30, 0, 23, 1); /* Dark red tint tint background */
     padding: 16px;
     border-radius: 8px;
     border: solid;
@@ -437,7 +436,6 @@ footer a:hover {
     color: var(--color-mono-50);
     background: var(--color-red-500);
 }
-
 
 ::-webkit-scrollbar {
     width: 4px;
@@ -641,7 +639,6 @@ footer a:hover {
     .top-banner {
         padding-inline: 24px;
     }
-
 
     .search-bar {
         padding: 14px 18px 14px 44px;
