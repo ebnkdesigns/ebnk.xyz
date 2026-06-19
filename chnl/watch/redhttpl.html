@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ee0826">
+    <meta name="apple-mobile-web-app-title" content="webchnl">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>nive // channel</title>
+    <meta name="theme-color" content="#ee0826" />
+    
+    <link rel="stylesheet" href="https://ebnk.xyz/chnl/watch.css">
+    <link href="https://cdn.jsdelivr.net/npm/plyr@3.8.4/dist/plyr.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --plyr-color-main: #ee0826; 
+        }
+        body {
+            background: linear-gradient(135deg, #424242 0%, #000000 100%);
+            background-attachment: fixed;
+            min-height: 100dvh;
+            color: #ffffff;
+        }
+        .player-container {
+            width: 100%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <a href="https://ebnk.xyz/chnl/" id="home-nav">
+            <button class="menubutton">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+        </a>
+        <p id="channel-title-text">Loading...</p>
+    </div>
+    <div class="main">
+        <div class="player-container">
+            <video id="player" playsinline controls crossorigin="anonymous"></video>
+        </div>
+        
+        <div class="info">
+            <p id="viewer-count" style="color: gray; display: none;">● Offline</p>
+            <h1 id="about-title">About</h1>
+            <div id="about-description">
+                <p>Loading channel info...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/plyr@3.8.4/dist/plyr.polyfilled.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.16/dist/hls.min.js"></script>
+    <script type="text/javascript">
+        (async function generatePage() {
+            // Hardcoded by the Python generator
+            const slug = "redhttpl";
+            window.currentSlug = slug;
+
+            const viewerCountEl = document.getElementById("viewer-count");
+            const titleEl = document.getElementById("channel-title-text");
+            const aboutTitleEl = document.getElementById("about-title");
+            const aboutDescEl = document.getElementById("about-description");
+            const video = document.getElementById("player");
+
+            let channel = null;
+            try {
+                const res = await fetch(`https://api.nive.live/api/channel/${slug}`);
+                channel = await res.json();
+            } catch (e) {
+                console.error("Failed to fetch channel data", e);
+            }
+
+            if (!channel || !channel.id) {
+                document.title = "Channel not found";
+                titleEl.textContent = "Error";
+                aboutTitleEl.textContent = "Channel not found.";
+                aboutDescEl.innerHTML = `<p>The channel <b>@${slug}</b> does not exist or couldn't be loaded.</p>`;
+                return;
+            }
+
+            document.title = `nive // @${channel.name}`;
+            titleEl.textContent = `@${channel.name}`;
+            aboutTitleEl.textContent = `About @${channel.name}`;
+            aboutDescEl.innerHTML = `<p>${channel.description || 'No description provided.'}</p>`;
+
+            let hlsInstance = null;
+            let plyrInstance = null;
+
+            function initPlyr() {
+                if (!plyrInstance) {
+                    plyrInstance = new Plyr(video, {
+                        controls: ["play-large", "play", "mute", "volume", "settings", "pip", "airplay", "fullscreen"],
+                        settings: ["quality"],
+                    });
+                }
+            }
+
+            if (channel.is_live === true) {
+                const source = `https://mci01.nive.live/${channel.id}/index.m3u8`;
+
+                if (Hls.isSupported()) {
+                    hlsInstance = new Hls({
+                        liveSyncDurationCount: 4,
+                        liveMaxLatencyDurationCount: 8,
+                        maxLiveSyncPlaybackRate: 1,
+                        maxBufferLength: 20,
+                        backBufferLength: 5,
+                        xhrSetup: (xhr) => { xhr.withCredentials = true; }
+                    });
+                    
+                    hlsInstance.attachMedia(video);
+                    hlsInstance.on(Hls.Events.MEDIA_ATTACHED, () => {
+                        hlsInstance.loadSource(source);
+                    });
+                    
+                    hlsInstance.on(Hls.Events.MANIFEST_PARSED, async () => {
+                        initPlyr();
+                        try { await video.play(); } catch(e) {}
+                    });
+                } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                    video.src = source;
+                    initPlyr();
+                    video.addEventListener('loadedmetadata', async () => {
+                        try { await video.play(); } catch(e) {}
+                    });
+                }
+            } else {
+                video.src = "/assets/video/rest.mp4";
+                video.loop = true;
+                initPlyr();
+            }
+
+            function updateViewerCount() {
+                fetch('https://api.nive.live/api/channels')
+                    .then(response => response.json())
+                    .then(data => {
+                        let channelsArray = [];
+                        if (Array.isArray(data)) {
+                            channelsArray = data;
+                        } else if (typeof data === 'object') {
+                            for (const key in data) {
+                                if (Array.isArray(data[key])) {
+                                    channelsArray = data[key];
+                                    break;
+                                }
+                            }
+                        }
+
+                        const currentChannelData = channelsArray.find(c => c.name === window.currentSlug);
+                        viewerCountEl.style.display = "block";
+
+                        if (!currentChannelData || currentChannelData.is_live === false) {
+                            viewerCountEl.textContent = "● Offline";
+                            viewerCountEl.style.color = "gray";
+                        } else {
+                            const viewers = currentChannelData.viewer_count || 0;
+                            viewerCountEl.textContent = `● ${viewers}`;
+                            viewerCountEl.style.color = "rgb(255, 91, 91)";
+                        }
+                    })
+                    .catch(() => {
+                        viewerCountEl.style.display = "block";
+                        viewerCountEl.textContent = "● Offline";
+                        viewerCountEl.style.color = "gray";
+                    });
+            }
+
+            function getClientId() {
+                let id = localStorage.getItem('webchnl_client_id');
+                if (!id) {
+                    if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+                        id = crypto.randomUUID();
+                    } else {
+                        id = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                            return v.toString(16);
+                        });
+                    }
+                    localStorage.setItem('webchnl_client_id', id);
+                }
+                return id;
+            }
+
+            function sendHeartbeat() {
+                fetch('https://webchnl.com/api/heartbeat.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: `slug=${encodeURIComponent(window.currentSlug)}&client_id=${encodeURIComponent(getClientId())}`
+                }).catch(e => console.error("Heartbeat error", e));
+            }
+
+            updateViewerCount();
+            sendHeartbeat();
+            setInterval(updateViewerCount, 10000);
+            setInterval(sendHeartbeat, 10000);
+        })();
+    </script>
+</body>
+</html>
