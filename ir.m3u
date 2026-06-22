@@ -1,0 +1,161 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="",Afra Series
+https://afrashls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Afra Film
+https://afrafhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Arax TV
+https://araxhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Royal TV
+https://arvhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Arko TV
+https://arkhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Avang
+https://avanghls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",AVA Series
+https://avaserieshls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Cafe Film
+https://cafefhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",24/7 Box
+https://ch1hls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Classic TV
+https://clshls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Datis TV
+https://dathls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",FX 1 Movies
+https://fxtvhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",CINEX
+https://gcinemahls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",GO2Travel
+https://go2thls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Maah TV
+https://hodhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Home+
+https://homeplushls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",iCC+
+https://icchls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Khabarbin
+https://khbhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Meta Film
+https://metafilmhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Gold Star
+https://moviethls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",MTC
+https://mtchls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Net TV
+https://nethls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",PMC
+https://pmchls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",PMC Royale
+https://pmcrohls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Datis TV
+https://ronhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Tapesh 2
+https://t2hls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",FX 2 Cartoon
+https://toonixhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Persiana Cinema
+https://cinehls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Persiana Comedy
+https://comedyhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Persiana+
+https://euhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Persiana Family
+https://familyhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Persiana Fight
+https://fighthls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Persiana Iranian
+https://irhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Persiana Junior
+https://junhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Persiana Korea
+https://korhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Persiana Music
+https://musichls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Persiana Nostalgia
+https://noshls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Persiana Series
+https://onehls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Persiana Emirates
+https://pemirateshls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Persiana Medical
+https://phd2hls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Persiana Travel
+https://ptravelhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Persiana Reality
+https://realhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Persiana Science
+https://scihls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Persiana Sonnati
+https://sonhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="",Boom TV
+https://northtelecom.b-cdn.net/AfraFilmTV.m3u8
+#EXTINF:-1 tvg-logo="",Gem Classic
+https://northtelecom.b-cdn.net/GEMCLASSIC.m3u8
+#EXTINF:-1 tvg-logo="",Gem Comedy
+https://northtelecom.b-cdn.net/GEMCOMEDY.m3u8
+#EXTINF:-1 tvg-logo="",Gem Documentary
+https://northtelecom.b-cdn.net/GEMDOCUMENTARYHD.m3u8
+#EXTINF:-1 tvg-logo="",Gem Drama
+https://northtelecom.b-cdn.net/GEMDRAMA.m3u8
+#EXTINF:-1 tvg-logo="",Gem Drama+
+https://northtelecom.b-cdn.net/GEMDRAMA%2BHD.m3u8
+#EXTINF:-1 tvg-logo="",Gem Entertainment
+https://northtelecom.b-cdn.net/GEMENTERTAINMENTSD.m3u8
+#EXTINF:-1 tvg-logo="",Gem Film
+https://northtelecom.b-cdn.net/GEMFILM.m3u8
+#EXTINF:-1 tvg-logo="",Gem Food
+https://northtelecom.b-cdn.net/GEMFOOD.m3u8
+#EXTINF:-1 tvg-logo="",Gem Junior
+https://northtelecom.b-cdn.net/GEMJUNIOR.m3u8
+#EXTINF:-1 tvg-logo="",Gem Kids
+https://northtelecom.b-cdn.net/GEMKIDS.m3u8
+#EXTINF:-1 tvg-logo="",Gem Mifa+
+https://northtelecom.b-cdn.net/GEMMIFA%2BHD.m3u8
+#EXTINF:-1 tvg-logo="",Gem Music
+https://northtelecom.b-cdn.net/GEMMUSIC.m3u8
+#EXTINF:-1 tvg-logo="",Gem Nature
+https://northtelecom.b-cdn.net/GEMMUSIC.m3u8
+#EXTINF:-1 tvg-logo="",Gem Series
+https://northtelecom.b-cdn.net/GEMMUSIC.m3u8
+#EXTINF:-1 tvg-logo="",Gem Series+
+https://northtelecom.b-cdn.net/GEMSERIES%2BHD.m3u8
+#EXTINF:-1 tvg-logo="",Gem Sport
+https://northtelecom.b-cdn.net/GEMSPORTHD.m3u8
+#EXTINF:-1 tvg-logo="",Gem TV
+https://northtelecom.b-cdn.net/GEMTV.m3u8
+#EXTINF:-1 tvg-logo="",Gem TV+
+https://northtelecom.b-cdn.net/GEMTV%2BHD.m3u8
+#EXTINF:-1 tvg-logo="",Grand Cinema
+https://northtelecom.b-cdn.net/Grand%20Cinema.m3u8
+#EXTINF:-1 tvg-logo="",Grand Cinema 2
+https://northtelecom.b-cdn.net/GrandCinema.m3u8
+#EXTINF:-1 tvg-logo="",Grand Series
+https://northtelecom.b-cdn.net/GrandSeries.m3u8
+#EXTINF:-1 tvg-logo="",Grand Sport
+https://northtelecom.b-cdn.net/GrandSport.m3u8
+#EXTINF:-1 tvg-logo="",Grand TV
+https://northtelecom.b-cdn.net/GrandTV.m3u8
+#EXTINF:-1 tvg-logo="",Grand Toon
+https://northtelecom.b-cdn.net/GrandToon.m3u8
+#EXTINF:-1 tvg-logo="",MIFA Music
+https://northtelecom.b-cdn.net/MIFAMUSICHD.m3u8
+#EXTINF:-1 tvg-logo="",MI TV
+https://northtelecom.b-cdn.net/MITV.m3u8
+#EXTINF:-1 tvg-logo="",Shine TV
+https://northtelecom.b-cdn.net/MaahTV.m3u8
+#EXTINF:-1 tvg-logo="",Onyx
+https://northtelecom.b-cdn.net/ONYXHD.m3u8
+#EXTINF:-1 tvg-logo="",River
+https://northtelecom.b-cdn.net/RIVER.m3u8
+#EXTINF:-1 tvg-logo="",River+
+https://northtelecom.b-cdn.net/RIVER%2BHD.m3u8
+#EXTINF:-1 tvg-logo="",Rubix
+https://northtelecom.b-cdn.net/RUBIX.m3u8
+#EXTINF:-1 tvg-logo="",Rubix+
+https://northtelecom.b-cdn.net/RUBIX%2BHD.m3u8
+#EXTINF:-1 tvg-logo="",HodHodTV
+https://northtelecom.b-cdn.net/hodhodtv.m3u8
+#EXTINF:-1 tvg-logo="",Lux TV
+https://northtelecom.b-cdn.net/luxtv.m3u8
+#EXTINF:-1 tvg-logo="",City TV
+https://northtelecom.b-cdn.net/citytv.m3u8
