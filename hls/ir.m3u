@@ -1,161 +1,245 @@
 #EXTM3U
-#EXTINF:-1 tvg-logo="",Afra Series
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=afrashls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Afra Film
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=jolly-fog-8d30.lightyman-yt.workers.dev/?url=afrafhls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Arax TV
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=jolly-fog-8d30.lightyman-yt.workers.dev/?url=araxhls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Royal TV
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=jolly-fog-8d30.lightyman-yt.workers.dev/?url=arvhls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Arko TV
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=arkhls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Avang
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=avanghls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",AVA Series
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=avaserieshls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Cafe Film
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=cafefhls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",24/7 Box
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=ch1hls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Classic TV
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=clshls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Datis TV
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=dathls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",FX 1 Movies
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=fxtvhls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",CINEX
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=gcinemahls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",GO2Travel
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=go2thls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Maah TV
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=hodhls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Home+
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=homeplushls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",iCC+
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=icchls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Khabarbin
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=khbhls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Meta Film
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=metafilmhls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Gold Star
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=moviethls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",MTC
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=mtchls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Net TV
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=nethls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",PMC
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=pmchls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",PMC Royale
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=pmcrohls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Datis TV
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=ronhls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Tapesh 2
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=t2hls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",FX 2 Cartoon
-https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=toonixhls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Persiana Cinema
-https://cinehls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Persiana Comedy
-https://comedyhls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Persiana+
-https://euhls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Persiana Family
-https://familyhls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Persiana Fight
-https://fighthls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Persiana Iranian
-https://irhls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Persiana Junior
-https://junhls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Persiana Korea
-https://korhls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Persiana Music
-https://musichls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Persiana Nostalgia
-https://noshls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Persiana Series
-https://onehls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Persiana Emirates
-https://pemirateshls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Persiana Medical
-https://phd2hls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Persiana Travel
-https://ptravelhls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Persiana Reality
-https://realhls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Persiana Science
-https://scihls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Persiana Sonnati
-https://sonhls.persiana.live/hls/stream.m3u8
-#EXTINF:-1 tvg-logo="",Boom TV
-https://northtelecom.b-cdn.net/AfraFilmTV.m3u8
-#EXTINF:-1 tvg-logo="",Gem Classic
-https://northtelecom.b-cdn.net/GEMCLASSIC.m3u8
-#EXTINF:-1 tvg-logo="",Gem Comedy
-https://northtelecom.b-cdn.net/GEMCOMEDY.m3u8
-#EXTINF:-1 tvg-logo="",Gem Documentary
-https://northtelecom.b-cdn.net/GEMDOCUMENTARYHD.m3u8
-#EXTINF:-1 tvg-logo="",Gem Drama
-https://northtelecom.b-cdn.net/GEMDRAMA.m3u8
-#EXTINF:-1 tvg-logo="",Gem Drama+
-https://northtelecom.b-cdn.net/GEMDRAMA%2BHD.m3u8
-#EXTINF:-1 tvg-logo="",Gem Entertainment
-https://northtelecom.b-cdn.net/GEMENTERTAINMENTSD.m3u8
-#EXTINF:-1 tvg-logo="",Gem Film
-https://northtelecom.b-cdn.net/GEMFILM.m3u8
-#EXTINF:-1 tvg-logo="",Gem Food
-https://northtelecom.b-cdn.net/GEMFOOD.m3u8
-#EXTINF:-1 tvg-logo="",Gem Junior
-https://northtelecom.b-cdn.net/GEMJUNIOR.m3u8
-#EXTINF:-1 tvg-logo="",Gem Kids
-https://northtelecom.b-cdn.net/GEMKIDS.m3u8
-#EXTINF:-1 tvg-logo="",Gem Mifa+
-https://northtelecom.b-cdn.net/GEMMIFA%2BHD.m3u8
-#EXTINF:-1 tvg-logo="",Gem Music
-https://northtelecom.b-cdn.net/GEMMUSIC.m3u8
-#EXTINF:-1 tvg-logo="",Gem Nature
-https://northtelecom.b-cdn.net/GEMMUSIC.m3u8
-#EXTINF:-1 tvg-logo="",Gem Series
-https://northtelecom.b-cdn.net/GEMMUSIC.m3u8
-#EXTINF:-1 tvg-logo="",Gem Series+
-https://northtelecom.b-cdn.net/GEMSERIES%2BHD.m3u8
-#EXTINF:-1 tvg-logo="",Gem Sport
-https://northtelecom.b-cdn.net/GEMSPORTHD.m3u8
-#EXTINF:-1 tvg-logo="",Gem TV
-https://northtelecom.b-cdn.net/GEMTV.m3u8
-#EXTINF:-1 tvg-logo="",Gem TV+
-https://northtelecom.b-cdn.net/GEMTV%2BHD.m3u8
-#EXTINF:-1 tvg-logo="",Grand Cinema
-https://northtelecom.b-cdn.net/Grand%20Cinema.m3u8
-#EXTINF:-1 tvg-logo="",Grand Cinema 2
-https://northtelecom.b-cdn.net/GrandCinema.m3u8
-#EXTINF:-1 tvg-logo="",Grand Series
-https://northtelecom.b-cdn.net/GrandSeries.m3u8
-#EXTINF:-1 tvg-logo="",Grand Sport
-https://northtelecom.b-cdn.net/GrandSport.m3u8
-#EXTINF:-1 tvg-logo="",Grand TV
-https://northtelecom.b-cdn.net/GrandTV.m3u8
-#EXTINF:-1 tvg-logo="",Grand Toon
-https://northtelecom.b-cdn.net/GrandToon.m3u8
-#EXTINF:-1 tvg-logo="",MIFA Music
-https://northtelecom.b-cdn.net/MIFAMUSICHD.m3u8
-#EXTINF:-1 tvg-logo="",MI TV
-https://northtelecom.b-cdn.net/MITV.m3u8
-#EXTINF:-1 tvg-logo="",Shine TV
-https://northtelecom.b-cdn.net/MaahTV.m3u8
-#EXTINF:-1 tvg-logo="",Onyx
-https://northtelecom.b-cdn.net/ONYXHD.m3u8
-#EXTINF:-1 tvg-logo="",River
-https://northtelecom.b-cdn.net/RIVER.m3u8
-#EXTINF:-1 tvg-logo="",River+
-https://northtelecom.b-cdn.net/RIVER%2BHD.m3u8
-#EXTINF:-1 tvg-logo="",Rubix
-https://northtelecom.b-cdn.net/RUBIX.m3u8
-#EXTINF:-1 tvg-logo="",Rubix+
-https://northtelecom.b-cdn.net/RUBIX%2BHD.m3u8
-#EXTINF:-1 tvg-logo="",HodHodTV
-https://northtelecom.b-cdn.net/hodhodtv.m3u8
-#EXTINF:-1 tvg-logo="",Lux TV
-https://northtelecom.b-cdn.net/luxtv.m3u8
-#EXTINF:-1 tvg-logo="",City TV
-https://northtelecom.b-cdn.net/citytv.m3u8
+
+# === GENERAL ENTERTAINMENT ===
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",24/7 Box
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://ch1hls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",4U TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://hls.4utv.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",4U Family
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://familyhls.4utv.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",AVA Family
+http://5.160.168.13:8000/play/a04o/index.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Grand TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GrandTV.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Home+
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://homeplushls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",iCC+
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://icchls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",MBC Persia
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://hls.mbcpersia.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",MI TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/MITV.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Net TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://nethls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Tapesh 2
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://t2hls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",T2 International
+https://spf-cors-onetv-bb3v.cfcrossing.workers.dev/?url=https://ca-rt.onetv.app/T2International/index-0.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",City TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/citytv.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Datis TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://dathls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Datis TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://ronhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Royal TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://arvhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Arko TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://arkhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Avang
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://avanghls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Boom TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/AfraFilmTV.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Shine TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/MaahTV.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Maah TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://hls.maahtv.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Maah TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://hodhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",OXIR TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://hls.oxir.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Persiana+
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://euhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Persiana Family
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://familyhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Persiana Iranian
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://irhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Persiana Reality
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://realhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Persiana Sonnati
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://sonhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Persiana Emirates
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://pemirateshls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Gem TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMTV.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Gem TV+
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMTV%2BHD.m3u8
+#EXTINF:-1 tvg-logo="" group-title="General Entertainment",Gem Entertainment
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMENTERTAINMENTSD.m3u8
+#EXTINF:-1 tvg-logo="https://whiplash.cc/assets/img/channels/atlas.png" group-title="General Entertainment",Atlas Web
+https://cdn.whiplash.cc/whiplash-atlas/index.m3u8
+#EXTINF:-1 tvg-logo="https://whiplash.cc/assets/img/channels/windowtv.png" group-title="General Entertainment",Window TV
+https://cdn.whiplash.cc/whiplash-windowtv/index.m3u8
+
+# === MOVIES & CINEMA ===
+#EXTINF:-1 tvg-logo="" group-title="Movies & Cinema",Afra Film
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://afrafhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Movies & Cinema",Cafe Film
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://cafefhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Movies & Cinema",Cinex
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://gcinemahls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Movies & Cinema",FX 1 Movies
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://fxtvhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Movies & Cinema",Meta Film
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://metafilmhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Movies & Cinema",Gold Star
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://moviethls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Movies & Cinema",Persiana Cinema
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://cinehls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Movies & Cinema",Gem Classic
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMCLASSIC.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Movies & Cinema",Gem Film
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMFILM.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Movies & Cinema",Grand Cinema
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/Grand%20Cinema.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Movies & Cinema",Grand Cinema 2
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GrandCinema.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Movies & Cinema",T2 Movies
+https://spf-cors-onetv-bb3v.cfcrossing.workers.dev/?url=https://ca-rt.onetv.app/T2Movies/index-0.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Movies & Cinema",Ekran Movies
+https://spf-cors-onetv-bb3v.cfcrossing.workers.dev/?url=https://ca-rt.onetv.app/EkranMovies/index-0.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Movies & Cinema",Iran Film
+http://5.160.168.13:8000/play/a05n/index.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Movies & Cinema",Onyx
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/ONYXHD.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Movies & Cinema",Rubix
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/RUBIX.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Movies & Cinema",Rubix+
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/RUBIX%2BHD.m3u8
+#EXTINF:-1 tvg-logo="https://whiplash.cc/assets/img/channels/whiplash.png" group-title="Movies & Cinema",Whiplash
+https://cdn.whiplash.cc/whiplash/index.m3u8
+#EXTINF:-1 tvg-logo="https://whiplash.cc/assets/img/channels/whiplash2.png" group-title="Movies & Cinema",Whiplash 2
+https://cdn.whiplash.cc/whiplash-2/index.m3u8
+#EXTINF:-1 tvg-logo="https://whiplash.cc/assets/img/channels/whiplashcinema.png" group-title="Movies & Cinema",Whiplash Cinema
+https://cdn.whiplash.cc/whiplash-cinema/index.m3u8
+
+# === SERIES & DRAMA ===
+#EXTINF:-1 tvg-logo="" group-title="Series & Drama",Afra Series
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://afrashls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Series & Drama",AVA Series
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://avaserieshls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Series & Drama",Persiana Series
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://onehls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Series & Drama",Persiana Comedy
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://comedyhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Series & Drama",Persiana Korea
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://korhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Series & Drama",Gem Drama
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMDRAMA.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Series & Drama",Gem Drama+
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMDRAMA%2BHD.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Series & Drama",Gem Series
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMMUSIC.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Series & Drama",Gem Series+
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMSERIES%2BHD.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Series & Drama",Gem Comedy
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMCOMEDY.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Series & Drama",Grand Series
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GrandSeries.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Series & Drama",River
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/RIVER.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Series & Drama",River+
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/RIVER%2BHD.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Series & Drama",iFilm 2
+https://live.presstv.ir/hls/ifilm2.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Series & Drama",Iran Comedy
+http:\\5.160.168.13:8000\play\a05c\index.m3u8
+
+# === SPORTS & FIGHT ===
+#EXTINF:-1 tvg-logo="" group-title="Sports & Fight",Persiana Sports
+http://5.160.168.13:8000/play/a08q/index.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Sports & Fight",Persiana Sports 2
+http:\\5.160.168.13:8000\play\a02z\index.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Sports & Fight",Persiana Sports 3
+http://5.160.168.13:8000/play/a08l/index.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Sports & Fight",Persiana Fight
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://fighthls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Sports & Fight",Gem Sport
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMSPORTHD.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Sports & Fight",Gem World Cup 1
+http://5.160.168.13:8000/play/a09e/index.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Sports & Fight",Grand Sport
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GrandSport.m3u8
+#EXTINF:-1 tvg-logo="https://static.telewebion.ir/channelsLogo/7bc81b96-3a06-4d5a-9349-a3ed837e3f0f/default" group-title="Sports & Fight",TW Sport 1
+https://ncdn.telewebion.ir/sport1/live/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://static.telewebion.ir/channelsLogo/7bc81b96-3a06-4d5a-9349-a3ed837e3f0f/default" group-title="Sports & Fight",TW Sport 2
+https://ncdn.telewebion.ir/sport2/live/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://static.telewebion.ir/channelsLogo/7bc81b96-3a06-4d5a-9349-a3ed837e3f0f/default" group-title="Sports & Fight",TW Sport 3
+https://ncdn.telewebion.ir/sport3/live/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://static.cdn.asset.aparat.com/profile-photo/9990286-995424-m.jpg" group-title="Sports & Fight",Aparat Sport 1
+https://www.aparatsport.ir/adele/getAparatManifest/rMp73dd2FD09FD8/master.m3u8
+#EXTINF:-1 tvg-logo="https://static.cdn.asset.aparat.com/profile-photo/9990286-995424-m.jpg" group-title="Sports & Fight",Aparat Sport 2
+https://www.aparatsport.ir/adele/getAparatManifest/H0Kcd876572F870/master.m3u8
+#EXTINF:-1 tvg-logo="https://static.cdn.asset.aparat.com/profile-photo/9990286-995424-m.jpg" group-title="Sports & Fight",Aparat Sport 3
+https://www.aparatsport.ir/adele/getAparatManifest/qrg3f853BFD44F8/master.m3u8
+#EXTINF:-1 tvg-logo="https://static.cdn.asset.aparat.com/profile-photo/9990286-995424-m.jpg" group-title="Sports & Fight",Aparat Sport 4
+https://www.aparatsport.ir/adele/getAparatManifest/aXQaee5cCD3D39B/master.m3u8
+
+# === KIDS & ANIMATION ===
+#EXTINF:-1 tvg-logo="" group-title="Kids & Animation",FX 2 Cartoon
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://toonixhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Kids & Animation",Persiana Junior
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://junhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Kids & Animation",Gem Junior
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMJUNIOR.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Kids & Animation",Gem Kids
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMKIDS.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Kids & Animation",Grand Toon
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GrandToon.m3u8
+#EXTINF:-1 tvg-logo="https://static.wikitide.net/indietvwiki/thumb/a/a1/TD_AGAIN.png/800px-TD_AGAIN.png" group-title="Kids & Animation",Toon Disney
+https://mci01.nive.live/29/index.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Kids & Animation",HodHodTV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/hodhodtv.m3u8
+
+# === MUSIC ===
+#EXTINF:-1 tvg-logo="" group-title="Music",Persiana Music
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://musichls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Music",Gem Music
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMMUSIC.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Music",Gem Mifa+
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMMIFA%2BHD.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Music",MIFA Music
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/MIFAMUSICHD.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Music",PMC
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://pmchls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Music",PMC Royale
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://pmcrohls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Music",PMC Planeta
+http://5.160.168.13:8000/play/a030/index.m3u8
+
+# === DOCUMENTARY, NEWS & LIFESTYLE ===
+#EXTINF:-1 tvg-logo="" group-title="Documentary, News & Lifestyle",GO2Travel
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://go2thls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Documentary, News & Lifestyle",Persiana Medical
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://phd2hls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Documentary, News & Lifestyle",Persiana Travel
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://ptravelhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Documentary, News & Lifestyle",Persiana Science
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://scihls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Documentary, News & Lifestyle",Persiana Nostalgia
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://noshls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Documentary, News & Lifestyle",Gem Documentary
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMDOCUMENTARYHD.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Documentary, News & Lifestyle",Gem Food
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMFOOD.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Documentary, News & Lifestyle",Gem Nature
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/GEMMUSIC.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Documentary, News & Lifestyle",Khabarbin
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://khbhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Documentary, News & Lifestyle",Classic TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://clshls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Documentary, News & Lifestyle",Arax TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://araxhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Documentary, News & Lifestyle",MTC
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://mtchls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Documentary, News & Lifestyle",Lux TV
+https://jolly-fog-8d30.lightyman-yt.workers.dev/?url=https://northtelecom.b-cdn.net/luxtv.m3u8
+
+# === REGIONAL & NATIONAL (IRIB) ===
+#EXTINF:-1 tvg-logo="https://static.telewebion.ir/channelsLogo/YzExZDIzZDJmOTQyMDMzYTdmMThiY2U2YTk5ZTA1NjBkOTc4ZjNiMGVhNDQ4YjI0YTkxOTE4NmQyYzQ1NjRlYw/default" group-title="Regional & National",IRIB Khorsan Razavi
+https://ncdn.telewebion.ir/khorasanrazavi/live/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://static.telewebion.ir/channelsLogo/ZWZlOGFhZWM3ZDI4MDVmZWVjZDhkNWJjMjliZDYwOGZiMDkyYTA2NzIzNTQ5NDBiYmU2NThiYzA4MDEwMWJlMQ/default" group-title="Regional & National",IRIB Tabarestan
+https://ncdn.telewebion.ir/tabarestan/live/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://static.telewebion.ir/channelsLogo/1a4aba4f-bb6e-410c-b3e9-79dcf0136938/default" group-title="Regional & National",IRIB Baran
+https://ncdn.telewebion.ir/baran/live/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://static.telewebion.ir/channelsLogo/1a4aba4f-bb6e-410c-b3e9-79dcf0136938/default" group-title="Regional & National",IRIB TV1+
+https://ncdn.telewebion.ir/tv1plus/live/playlist.m3u8
